@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+<struts>
+     <constant name="struts.devMode" value="true"/>
+    <package name="tutorial" namespace="/" extends="struts-default">
+    <!-- 引用的包以及可以使用的空间范围 -->
+    <action name="hello" class="tutorial.exec" method="execute">
+            <result name="TECAHER">/teacher_one.jsp</result>
+            <result name="STUDENT">/student_one.jsp</result>
+            <result name="error">/login_inter.jsp</result>
+            <result name="login">/login_inter.jsp</result>
+        </action>
+		<action name="modStu" class="tutorial.exec" method="modStuInf">
+            <result name="success">student_information.jsp</result>
+        </action>
+        <action name="modStuTmp" class="tutorial.exec" method="modStuInfTmp">
+        	<result name="success">modStuTmp</result>
+        </action>
+        
+        <action name="Search" class="tutorial.exec" method="searchTmp">
+        	<result name="success">search_resultone.jsp</result>
+        </action>
+        <action name="SearchTec" class="tutorial.exec" method="searchTec">
+        	<result name="success">teacherinf_forstu.jsp</result>
+        	<result name="Fail">fail.jsp</result>
+        </action>        
+        
+        <action name="hi" class="tutorial.exec" method="modTecInfTmp">
+            <result name="success">hi</result>
+        </action>
+        <action name="helload" class="tutorial.exec" method="modTecInf">
+            <result name="success">information_homepage.jsp</result>
+        </action>
+        <action name="datemod" class="tutorial.exec" method="modDate">
+            <result name="success">datemod</result>
+        </action>
+        <action name="weekindex" class="tutorial.exec" method="newWeekDate">
+            <result name="success">information_homepage.jsp</result>
+        </action>
+        <action name="lettersearch" class="tutorial.exec" method="searchTecLetter">
+            <result name="success">search_resultone.jsp</result>
+        </action>
+        <action name="reserve" class="tutorial.exec" method="Reserve">
+            <result name="success">student_information.jsp</result>
+        </action>
+        <action name="weekindex1" class="tutorial.exec" method="newWeekDate1">
+            <result name="success">teacherinf_forstu.jsp</result>
+        </action>
+        <action name="tecmodappt" class="tutorial.exec" method="TecModAppt">
+            <result name="success">information_homepage.jsp</result>
+        </action>
+        <action name="deleteappt" class="tutorial.exec" method="StuModAppt">
+            <result name="success">teacherinf_forstu.jsp</result>
+        </action>
+    </package>
+</struts>
